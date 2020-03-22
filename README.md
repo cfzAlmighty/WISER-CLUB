@@ -22,7 +22,6 @@ pandas, numpy, matplotlib, scipy, math, datetime, sklearn, xgboost, imblearn
 Aggregate Functions (groupby in Pandas), Hypothesis Testing (T test, F test), String Format, Lambda Expression,<br/>
 Adaboost, Random Forest, Cross Validation, Xgboost, GridSearchCV, Oversampling, Undersampling
 
-
 ## Contents
 
 ### Part 1: Explorative Data Analysis
