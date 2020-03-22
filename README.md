@@ -78,10 +78,9 @@ Try to construct *<font>user-item</font>* table. An example of user-item pair: (
 &emsp;&emsp;field for the following data mining models. <br/>
 &emsp;c.	The length of each user vector must be maximized. <br/>
 &emsp;d.	The dataset should be a <font face="Cambria Math">DataFrame</font> in Pandas, so you could customize the columns as you wish. <br/>
-&emsp;&emsp;For example, if the time span is from 2019-02-01 to 2019-02-10, then there are 10 days altogether. So each user corresponds to a 
-5-dimensional vector, with 4 features and 1 target dimension. The vector <font face="Cambria Math">[4, 0, 0, 0, 1]</font> means this 
-user bought one good between 02-09 and 02-10, and four goods between 02-01 and 02-02. Additionally, the length of each user vector MUST 
-BE 5 because of the rule c.
+&emsp;&emsp;For example, if the time span is from 2019-02-01 to 2019-02-10, then there are 10 days altogether. So each user <br/>
+&emsp;&emsp;corresponds to a 5-dimensional vector, with 4 features and 1 target dimension. The vector <font face="Cambria Math">[4, 0, 0, 0, 1]</font> means this <br/> 
+&emsp;&emsp;user bought one good between 02-09 and 02-10, and four goods between 02-01 and 02-02. Additionally, the length of each user &emsp;&emsp;vector MUST BE 5 because of the rule c.
 </font>
 
 ### Part 3: Model Training and Prediction
@@ -98,10 +97,10 @@ BE 5 because of the rule c.
 4.	Tune your model and report the best metrics you could get for your model and the corresponding confusion matrix and model name.<br/>
     At least Adaboost and Random Forest should be used for tuning. Here are some suggestions.   
     &emsp;a.	Try to do oversampling or undersampling. This is an imbalanced classification problem. <br/>
-    &emsp;b.	Change the parameters of each model (e.g. *<font>scale_pos_weight</font>* in *<font>Xgboost</font>* and probability threshold), more information <br/>
-    &emsp;&emsp;could be found in the Official Documentations.   <br/>
+    &emsp;b.	Change the parameters of each model (e.g. *<font>scale_pos_weight</font>* in *<font>Xgboost</font>* and probability threshold), more <br/>
+    &emsp;&emsp;information could be found in the Official Documentations.   <br/>
     &emsp;c.	Accuracy is not suitable to be an evaluation metric in this case. Use F1-measure.   <br/>
-    &emsp;d.	Try to not record the # of orders for each user. Record whether he bought the goods instead, 1 if he bought 
+    &emsp;d.	Try to not record the # of orders for each user. Record whether he bought the goods instead, 1 if he bought <br/>
     &emsp;&emsp;and 0 otherwise.   <br/>
     &emsp;e.	Try to record the active-user feature. Many users did not only buy one cup of drink during two days, so whether 
     &emsp;&emsp;one user is active should be taken into consideration. <br/>
