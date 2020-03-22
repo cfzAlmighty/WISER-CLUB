@@ -79,8 +79,9 @@ Try to construct *<font>user-item</font>* table. An example of user-item pair: (
 &emsp;c.	The length of each user vector must be maximized. <br/>
 &emsp;d.	The dataset should be a <font face="Cambria Math">DataFrame</font> in Pandas, so you could customize the columns as you wish. <br/>
 &emsp;&emsp;For example, if the time span is from 2019-02-01 to 2019-02-10, then there are 10 days altogether. So each user <br/>
-&emsp;&emsp;corresponds to a 5-dimensional vector, with 4 features and 1 target dimension. The vector <font face="Cambria Math">[4, 0, 0, 0, 1]</font> means this <br/> 
-&emsp;&emsp;user bought one good between 02-09 and 02-10, and four goods between 02-01 and 02-02. Additionally, the length of each user &emsp;&emsp;vector MUST BE 5 because of the rule c.
+&emsp;&emsp;corresponds to a 5-dimensional vector, with 4 features and 1 target dimension. The vector <font face="Cambria Math">[4, 0, 0, 0, 1]</font> means <br/> 
+&emsp;&emsp;this user bought one good between 02-09 and 02-10, and four goods between 02-01 and 02-02. Additionally, <br/>
+&emsp;&emsp;the length of each user vector MUST BE 5 because of the rule c.
 </font>
 
 ### Part 3: Model Training and Prediction
