@@ -7,8 +7,8 @@ The project is about Business Analytics and Data Mining. It consists of three pa
   Part 1: Explorative Data Analysis <br/>
   Part 2: Data Preprocessing    <br/>
   Part 3: Model Training and Prediction <br/>
-Each part has seversal problems. We have got two csv files, named data.csv and holiday.csv, derived from
-a new retail specialty coffee operator. The task is to use data and models to find hidden information.
+Each part has seversal problems. (You can see the problems in Contents.) We have got two csv files, named data.csv and holiday.csv, 
+derived from a new retail specialty coffee operator. The task is to use data and models to find hidden information.
 
 For SECURITY reasons, the files with extension .csv will not be uploaded.
 
