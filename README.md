@@ -10,6 +10,8 @@ The project is about Business Analytics and Data Mining. It consists of three pa
 Each part has seversal problems. We have got two csv files, named data.csv and holiday.csv, derived from
 a new retail specialty coffee operator. The task is to use data and models to find hidden information.
 
+For SECURITY reasons, the files with extension .csv will not be uploaded.
+
 ## Packages used in the project
 
 pandas, numpy, matplotlib, scipy, math, datetime, sklearn, xgboost, imblearn
