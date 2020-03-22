@@ -18,7 +18,7 @@ pandas, numpy, matplotlib, scipy, math, datetime, sklearn, xgboost, imblearn
 
 ## Methods used in the project
 
-Aggregate Functions (groupby in Pandas), Hypothesis Testing (T test, F test), String Format, Lambda Expression,
+Aggregate Functions (groupby in Pandas), Hypothesis Testing (T test, F test), String Format, Lambda Expression,<br/>
 Adaboost, Random Forest, Cross Validation, Xgboost, GridSearchCV, Oversampling, Undersampling
 
 ## Contents
@@ -77,10 +77,7 @@ Adaboost, Random Forest, Cross Validation, Xgboost, GridSearchCV, Oversampling, 
 &emsp;b.	The last two days of the time span of the data should be the *<font>future</font>* , which means it corresponds to the *<font>target</font>*  field for the following data mining models. <br/>
 &emsp;c.	The length of each user vector must be maximized. <br/>
 &emsp;d.	The dataset should be a <font face="Cambria Math">DataFrame</font> in Pandas, so you could customize the columns as you wish. <br/>
-&emsp;For example, if the time span is from 2019-02-01 to 2019-02-10, then there are 10 days altogether. So each user corresponds to  
-&emsp;a 5-dimensional vector, with $4$ features and $1$ target dimension. The vector <font face="Cambria Math">[4, 0, 0, 0, 1]</font> means this user bought one good  
-&emsp;between 02-09 and 02-10, and four goods between 02-01 and 02-02. Additionally, the length of each user vector MUST BE $5$  
-&emsp;because of the rule c.
+For example, if the time span is from 2019-02-01 to 2019-02-10, then there are 10 days altogether. So each user corresponds to a 5-dimensional vector, with 4 features and 1 target dimension. The vector <font face="Cambria Math">[4, 0, 0, 0, 1]</font> means this user bought one good between 02-09 and 02-10, and four goods between 02-01 and 02-02. Additionally, the length of each user vector MUST BE 5 because of the rule c.
 </font>
 
 ### Part 3: Model Training and Prediction
@@ -99,8 +96,8 @@ Adaboost, Random Forest, Cross Validation, Xgboost, GridSearchCV, Oversampling, 
     &emsp;a.	Try to do oversampling or undersampling. This is an imbalanced classification problem. <br/>
     &emsp;b.	Change the parameters of each model (e.g. *<font>scale_pos_weight</font>* in *<font>Xgboost</font>* and probability threshold), more information could be found in the Official Documentations.   <br/>
     &emsp;c.	Accuracy is not suitable to be an evaluation metric in this case. Use F1-measure.   <br/>
-    &emsp;d.	Try to not record the # of orders for each user. Record whether he bought the goods instead, 1 if he bought and 0 otherwise.   <br/>
+    &emsp;d.	Try to not record the # of orders for each user. Record whether he bought the goods instead, 1 if he bought and 0    otherwise.   <br/>
     &emsp;e.	Try to record the active-user feature. Many users did not only buy one cup of drink during two days, so whether one user is active should be taken into consideration. <br/>
-    &emsp;f.  Try to split the data with respect to Workdays and Weekends and train two different models. If that is the best choice, then you should report two metrics, one for Workdays Model and the other one for Weekends Model. <br/>
+    &emsp;f.  Try to split the data with respect to Workdays and Weekends and train two different models. If that is the best choice,    then you should report two metrics, one for Workdays Model and the other one for Weekends Model. <br/>
 5.	After tuning, try to explain why your model works better.
 </font>
