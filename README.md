@@ -68,15 +68,16 @@ Adaboost, Random Forest, Cross Validation, Xgboost, GridSearchCV, Oversampling, 
 1. Remove the first column of the data in *<font>data.csv</font>* , because it is just a copy of index.<br/>
 
 2.	<font color = blue>Boss: To implement Collaborative Filtering in recommendation systems, we need a user-item table to show the number of orders for each user and each item.</font> <br/>
-&emsp;Try to construct *<font>user-item</font>* table. An example of user-item pair: (Phone_No, 标准美式)<br/>
+Try to construct *<font>user-item</font>* table. An example of user-item pair: (Phone_No, 标准美式)<br/>
 
 3.	<font color = blue>Boss: Life is not like a Markov Chain, which means everyone's past behavior is correlated with his present one.  
     And that is why we could exploit past purchase behavior to predict their future buying trends.</font>  <br/>
     Try to construct a dataset to show this past purchasing behavior trend. For convenience, several instructions are proposed as follows <br/>
 &emsp;a.	Two days correspond to one dimension. <br/>
-&emsp;b.	The last two days of the time span of the data should be the *<font>future</font>* , which means it corresponds to the *<font>target</font>*  field for the following data mining models. <br/>
+&emsp;b.	The last two days of the time span of the data should be the *<font>future</font>* , which means it corresponds to the *<font>target</font>* 
+field for the following data mining models. <br/>
 &emsp;c.	The length of each user vector must be maximized. <br/>
-&emsp;d.	The dataset should be a <font face="Cambria Math">DataFrame</font> in Pandas, so you could customize the columns as you wish. <br/>
+&emsp;d.	The dataset should be a <font face="Cambria Math">DataFrame</font> in Pandas, so you could customize the columns as you wish.
 For example, if the time span is from 2019-02-01 to 2019-02-10, then there are 10 days altogether. So each user corresponds to a 5-dimensional vector, with 4 features and 1 target dimension. The vector <font face="Cambria Math">[4, 0, 0, 0, 1]</font> means this user bought one good between 02-09 and 02-10, and four goods between 02-01 and 02-02. Additionally, the length of each user vector MUST BE 5 because of the rule c.
 </font>
 
