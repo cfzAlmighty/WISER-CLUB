@@ -1,4 +1,4 @@
-# WISER-CLUB
+# WISER CLUB Final Project
 
 # Project Introduction
 
