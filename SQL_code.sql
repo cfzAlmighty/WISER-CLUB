@@ -1,18 +1,19 @@
-mysql> CREATE TABLE luckin_data1(Unnamed0 INT NOT NULL,
-Unnamed1 INT NOT NULL,
-dt DATE NOT NULL,
-phone_no VARCHAR(13) NOT NULL,
-member_id INT NOT NULL,
-commodity_code VARCHAR(6) NOT NULL,
-commodity_name VARCHAR(15) NOT NULL,
-commodity_origin_money DECIMAL(4,1) NOT NULL,
-coupon_id	 DECIMAL(6,1) NOT NULL,
-coupon_money DECIMAL(6,2) NOT NULL,
-one_category_name VARCHAR(4) NOT NULL,
-two_category_name VARCHAR(10) NOT NULL,
-commodity_income DECIMAL(4,2) NOT NULL,
-pay_money DECIMAL(6,2) NOT NULL,
-coffeestore_share_money DECIMAL(4,2) NOT NULL);
+mysql> CREATE TABLE luckin_data1(
+  Unnamed0 INT NOT NULL,
+  Unnamed1 INT NOT NULL,
+  dt DATE NOT NULL,
+  phone_no VARCHAR(13) NOT NULL,
+  member_id INT NOT NULL,
+  commodity_code VARCHAR(6) NOT NULL,
+  commodity_name VARCHAR(15) NOT NULL,
+  commodity_origin_money DECIMAL(4,1) NOT NULL,
+  coupon_id	DECIMAL(6,1) NOT NULL,
+  coupon_money DECIMAL(6,2) NOT NULL,
+  one_category_name VARCHAR(4) NOT NULL,
+  two_category_name VARCHAR(10) NOT NULL,
+  commodity_income DECIMAL(4,2) NOT NULL,
+  pay_money DECIMAL(6,2) NOT NULL,
+  coffeestore_share_money DECIMAL(4,2) NOT NULL);
 Query OK, 0 rows affected (0.01 sec)
 
 mysql> LOAD DATA INFILE 'C:/Users/cfz/Desktop/WISER CLUB/final_project/data.csv'
@@ -24,15 +25,25 @@ IGNORE 1 LINES;
 Query OK, 2351855 rows affected, 65535 warnings (26.09 sec)
 Records: 2351855  Deleted: 0  Skipped: 0  Warnings: 1046239
 
-CREATE TABLE luckin_holiday(dt DATE PRIMARY KEY,
-month INT NOT NULL,
-weekday INT NOT NULL,
-week_of_year INT NOT NULL,
-type INT NOT NULL,
-last_type INT NOT NULL,
-holiday_distance INT NOT NULL,
-holiday_code INT NOT NULL);
+mysql> CREATE TABLE luckin_holiday(
+  dt DATE PRIMARY KEY,
+  month INT NOT NULL,
+  weekday INT NOT NULL,
+  week_of_year INT NOT NULL,
+  type INT NOT NULL,
+  last_type INT NOT NULL,
+  holiday_distance INT NOT NULL,
+  holiday_code INT NOT NULL);
 Query OK, 0 rows affected (0.01 sec)
+
+mysql> LOAD DATA INFILE 'C:/Users/cfz/Desktop/WISER CLUB/final_project/holiday.csv'
+INTO TABLE luckin_holiday
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"' escaped by '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
+Query OK, 814 rows affected (0.01 sec)
+Records: 814  Deleted: 0  Skipped: 0  Warnings: 0
 
 ## Part 1: Explorative Data Analysis
 # Problem 1 Find the time span of the order data.
@@ -101,7 +112,7 @@ mysql> SELECT dt, COUNT(dt) AS daily_orders FROM luckin_data GROUP BY dt;
 +------------+--------------+
 41 rows in set (2.16 sec)
 
-# 查询行数
+# Query the number of rows in the table
 mysql> SELECT COUNT(*) FROM (SELECT dt, COUNT(dt) FROM luckin_data GROUP BY dt) AS date;
 +----------+
 | COUNT(*) |
@@ -150,7 +161,9 @@ mysql> SELECT commodity_income/commodity_origin_money FROM luckin_data LIMIT 5;
 +-----------------------------------------+
 5 rows in set (0.01 sec)
 
-mysql> SELECT luckin_data.*, d_rate.discount_rate FROM luckin_data, (SELECT Unnamed0, commodity_income/commodity_origin_money AS discount_rate FROM luckin_data) AS d_rate WHERE luckin_data.Unnamed0=d_rate.Unnamed0 LIMIT 5;
+mysql> SELECT luckin_data.*, d_rate.discount_rate
+FROM luckin_data, (SELECT Unnamed0, commodity_income/commodity_origin_money AS discount_rate FROM luckin_data) AS d_rate
+WHERE luckin_data.Unnamed0=d_rate.Unnamed0 LIMIT 5;
 +----------+----------+------------+-------------+-----------+----------------+----------------+------------------------+-----------+--------------+-------------------+-------------------+------------------+-----------+-------------------------+---------------+
 | Unnamed0 | Unnamed1 | dt         | phone_no    | member_id | commodity_code | commodity_name | commodity_origin_money | coupon_id | coupon_money | one_category_name | two_category_name | commodity_income | pay_money | coffeestore_share_money | discount_rate |
 +----------+----------+------------+-------------+-----------+----------------+----------------+------------------------+-----------+--------------+-------------------+-------------------+------------------+-----------+-------------------------+---------------+
